@@ -1,10 +1,12 @@
 const express = require('express');
 const { exec } = require("child_process")
+const cors = require("cors")
 const app = express();
 const port = 5000;
 
-let serverStartTime = Date.now(); 
+let serverStartTime = Date.now();
 
+app.use(cors())
 
 app.get('/', (req, res) => {
     const uptime = Math.floor((Date.now() - serverStartTime) / 1000);
