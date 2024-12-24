@@ -6,6 +6,11 @@ const port = 5000;
 
 let serverStartTime = Date.now();
 
+const RGB_COMMANDS = {
+    ON: "3301010000000000000000000000000000000033",
+    OFF: "3301000000000000000000000000000000000032"
+}
+
 app.use(cors())
 
 app.get('/', (req, res) => {
@@ -17,9 +22,11 @@ app.get('/', (req, res) => {
 app.get('/lock_event', (req, res) => {
     if(req.query.eventType === "LOCK") {
         exec("sudo pironman -rw off && sudo pironman -f 75 && sudo pironman -s 5 && sudo pironman -al off")
+        exec(`python /home/manu/Desktop/manus-setup/rgb.py ${RGB_COMMANDS.OFF}`)
     }
     else {
         exec("sudo pironman -rw on && sudo pironman -f 60 && sudo pironman -s 999 && sudo pironman -al on")
+        exec(`python /home/manu/Desktop/manus-setup/rgb.py ${RGB_COMMANDS.ON}`)
     }
     res.json({ eventType: req.query.eventType })
 });

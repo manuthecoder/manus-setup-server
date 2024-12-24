@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "@abandonware/bluetooth-hci-socket": "^0.5.3-12",
+    "@abandonware/noble": "^1.9.2-25",
+    "bleno": "^0.5.0",
     "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "noble": "^1.9.1"
   }
 }
