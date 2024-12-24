@@ -22,11 +22,11 @@ app.get('/', (req, res) => {
 app.get('/lock_event', (req, res) => {
     if(req.query.eventType === "LOCK") {
         exec("sudo pironman -rw off && sudo pironman -f 75 && sudo pironman -s 5 && sudo pironman -al off")
-        exec(`python /home/manu/Desktop/manus-setup/rgb.py ${RGB_COMMANDS.OFF}`)
+        exec(`python rgb.py ${RGB_COMMANDS.OFF}`)
     }
     else {
         exec("sudo pironman -rw on && sudo pironman -f 60 && sudo pironman -s 999 && sudo pironman -al on")
-        exec(`python /home/manu/Desktop/manus-setup/rgb.py ${RGB_COMMANDS.ON}`)
+        exec(`python rgb.py ${RGB_COMMANDS.ON}`)
     }
     res.json({ eventType: req.query.eventType })
 });
