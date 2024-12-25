@@ -31,6 +31,12 @@ app.get('/lock_event', (req, res) => {
     res.json({ eventType: req.query.eventType })
 });
 
+app.get('/ambient_lighting', (req, res) => {
+    const value = req.query.value;
+    exec(`python rgb.py ${value}`)
+    res.json({ success: true })
+})
+
 app.get('/set-fan', (req, res) => {
     const value = req.query.value;
     exec(`sudo pironman -f ${value}`)
