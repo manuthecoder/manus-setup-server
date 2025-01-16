@@ -1,7 +1,7 @@
 # Manu's Smart Server Setup
 
 > [!CAUTION]  
-> This is a personal, non-commercial project intended for educational and research purposes. Any reverse engineering activities are conducted in accordance with U.S. fair use provisions. The creator affirms that this work is meant solely for private study and legitimate research purposes.
+> This is a personal, non-commercial project intended for educational and research purposes. Any reverse engineering activities are conducted in accordance with U.S. fair use provisions. I affirm that this work is meant solely for private study and legitimate research purposes.
 >
 > 
 > Please see **17 U.S. Code § 1201 - Circumvention of copyright protection systems**
